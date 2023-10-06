@@ -1,5 +1,7 @@
+import Main from "./common/main";
+
 function App() {
-  return <div>hello</div>;
+  return <Main />;
 }
 
 export default App;
