@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -11,6 +13,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 
 export default function NestedList() {
   const [open, setOpen] = React.useState(true);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setOpen(!open);
@@ -29,7 +32,11 @@ export default function NestedList() {
       }
     >
       <ListItem>
-        <ListItemButton>
+        <ListItemButton
+          onClick={() => {
+            navigate("/battery");
+          }}
+        >
           <ListItemText primary="Battery Info" />
         </ListItemButton>
       </ListItem>
