@@ -2,7 +2,7 @@ import axios from "axios";
 
 const createAxiosInterceptors = (config) => {
   const instance = axios.create({
-    baseURL: "http://ems11api.ati-watt.com",
+    baseURL: "http://localhost:7001",
     timeout: 25000, //超时配置
     headers: {
       Accept: "application/json, text/plain, */*",
