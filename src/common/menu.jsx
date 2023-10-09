@@ -1,6 +1,8 @@
 import * as React from "react";
+
 import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
@@ -22,15 +24,24 @@ export default function NestedList() {
       aria-labelledby="nested-list-subheader"
       subheader={
         <ListSubheader component="div" id="nested-list-subheader">
-          Nested List Items
+          Menu
         </ListSubheader>
       }
     >
+      <ListItem>
+        <ListItemButton>
+          <ListItemText primary="Battery Info" />
+        </ListItemButton>
+      </ListItem>
+      <ListItem>
+        <ListItemButton>
+          <ListItemText primary="PV1 Input" />
+        </ListItemButton>
+      </ListItem>
       <ListItemButton onClick={handleClick}>
         <ListItemText primary="Inbox" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
-
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
